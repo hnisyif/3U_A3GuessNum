@@ -6,7 +6,7 @@
 
 import java.util.*;
 
-public A3GuessNum{
+public A3GuessNum {
   
   
   //main method
@@ -24,4 +24,5 @@ public A3GuessNum{
     
       
   }// close main
-}
+} 
+// I am simply testing if commit and push works 
