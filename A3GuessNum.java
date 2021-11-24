@@ -15,13 +15,19 @@ public class A3GuessNum {
         Random randomNumGenerator = new Random();
 
         // Generate a random number from 0 - 20
-        int randomNum = randomNumGenerator.nextInt(20) + 1;
+        int randomNum = randomNumGenerator.nextInt(100) + 1;
         int guess = 0;
 
         while(guess != randomNum) {
-            System.out.println(guess);
+            //System.out.println(guess);
             System.out.println("Guess a number");
             guess = input.nextInt();
+
+            if (guess > randomNum) {
+              System.out.println("Too High!");
+            } else if (guess < randomNum){
+              System.out.println("Too Low!");
+            }
         } // ENDWHILE
         System.out.println("Correct!");
 
