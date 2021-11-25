@@ -6,23 +6,24 @@
 
 import java.util.*;
 
-public A3GuessNum {
-  
-  
-  //main method
-  public static void main(String[] arg){
-    // Make a scanner and Random Object.
-    Scanner input = new Scanner(System.in);
-    Random numGenerator = new Random();
+public class A3GuessNum {
+
+    public static void main(String[] args) {
+        // Make a scanner and Random Object.
+        Scanner input = new Scanner(System.in);
+        Random randomNumGenerator = new Random();
+
+        // Generate a random number from 0 - 20
+        int randomNum = randomNumGenerator.nextInt(20) + 1;
+        int guess = 0;
+
+        while(guess != randomNum) {
+            System.out.println(guess);
+            System.out.println("Guess a number");
+            guess = input.nextInt();
+        } // ENDWHILE
+        System.out.println("Correct!");
+
+    } // close main
     
-    // Generate a random number from 0-5.
-    int answer = numGenerator.nextInt(6);
-    int guess = -1; // default guess num.
-    
-    System.out.println("Guess a number");
-    int guess = input.nextInt();  
-    
-      
-  }// close main
-} 
-// I am simply testing if commit and push works 
+} // close class 
