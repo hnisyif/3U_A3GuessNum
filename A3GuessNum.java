@@ -18,11 +18,18 @@ public class A3GuessNum {
         int guess = 0;
         int attempts = 5; 
 
-        while(attempts == 0 || guess != randomNum) {
+
+
+        while(guess != randomNum) {
+
             attempts--;
-            System.out.println("Guess a number\n");
+            System.out.println("Guess a number between 1 and 100.\n");
             guess = input.nextInt();
             System.out.println("Number of Attepmts: " + attempts);
+
+            if (attempts == 0) {
+            System.out.println("You ran out of attempts. So not sicko mode\n");
+            
 
             if (guess > randomNum) {
               System.out.println("Too High!\n");
@@ -39,10 +46,9 @@ public class A3GuessNum {
             } else if (guess >= randomNum + 5) {
               System.out.println("It's gettin REAL hot in here.\n");
             }
-            if (attempts == 0) {
-              System.out.println("You ran out, so not sicko mode\n");
+
             }
-            
+
         } // ENDWHILE
         System.out.println("Correct!\n");
 
