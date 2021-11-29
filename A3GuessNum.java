@@ -21,7 +21,7 @@ public class A3GuessNum {
         String cond ="";
         int guess = 0;
         int attempts = 5; 
-        boolean yayOrNay = true;
+
         // For testing
         //System.out.println(randomNum); 
 
@@ -31,6 +31,8 @@ public class A3GuessNum {
             System.out.println("Guess a number between 1 and 100.\n");
             guess = input.nextInt();
             attempts--;
+
+
 
             if (guess > randomNum) {
               System.out.println("Too High!\n");
@@ -70,13 +72,7 @@ public class A3GuessNum {
             }
 
             if (attempts == 0) {
-              if (guess == randomNum) {
-              System.out.println("Correct!\n");
-
-              } else {
               System.out.println("You lose, loser. \n");
-              System.out.println("The number you couldn't guess was " + randomNum + "\n"); 
-              }
               System.out.println("Do you wish to play again? yes or no?\n");
               cond = yesOrNo.nextLine();
 
@@ -88,12 +84,15 @@ public class A3GuessNum {
                 attempts += 5;
               } 
 
-            /*if (attempts == 0 || guess == randomNum)  {
-              System.out.println("Do you wish to play again? yes or no?");
-              String playAgain = yesOrNo.nextLine(); 
-            } */
-
         } // ENDWHILE
+        
+        if (guess == randomNum) {
+          System.out.println("Correct!\n");
+
+        } else {
+          System.out.println("Biggest L you've taken, G. \n");
+          System.out.println("The number you couldn't guess was " + randomNum + ".\n"); 
+        }
     
     } // close main
     
