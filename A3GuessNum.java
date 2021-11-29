@@ -40,9 +40,7 @@ public class A3GuessNum {
               System.out.println("Please enter a number only! \n");
               isNum = false;
               input.next();
-            }
-               
-            
+            }   
 
             if (guess > randomNum) {
               System.out.println("Too High!\n");
