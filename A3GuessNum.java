@@ -21,6 +21,7 @@ public class A3GuessNum {
         String cond ="";
         int guess = 0;
         int attempts = 5; 
+        boolean isNum;
 
         // For testing
         //System.out.println(randomNum); 
@@ -29,10 +30,19 @@ public class A3GuessNum {
 
             System.out.println("Number of Attepmts: " + attempts + "\n");
             System.out.println("Guess a number between 1 and 100.\n");
-            guess = input.nextInt();
-            attempts--;
 
-
+            if (input.hasNextInt()) {
+              guess = input.nextInt();
+              isNum = true;
+              attempts--;
+              
+            } else {
+              System.out.println("Please enter a number only! \n");
+              isNum = false;
+              input.next();
+            }
+               
+            
 
             if (guess > randomNum) {
               System.out.println("Too High!\n");
