@@ -5,6 +5,7 @@
 */
 
 import java.util.*;
+import java.util.Scanner;
 
 public class A3GuessNum {
 
@@ -12,12 +13,15 @@ public class A3GuessNum {
 
         // Make a scanner and Random Object.
         Scanner input = new Scanner(System.in);
+        Scanner yesOrNo = new Scanner(System.in);
         Random randomNumGenerator = new Random();
 
         // Random Number Generator and needed variables.
         int randomNum = randomNumGenerator.nextInt(100) + 1;
+        String cond ="";
         int guess = 0;
         int attempts = 5; 
+        boolean yayOrNay = true;
         // For testing
         //System.out.println(randomNum); 
 
@@ -27,7 +31,7 @@ public class A3GuessNum {
             System.out.println("Guess a number between 1 and 100.\n");
             guess = input.nextInt();
             attempts--;
-          
+
             if (guess > randomNum) {
               System.out.println("Too High!\n");
             } else if (guess < randomNum){
@@ -66,17 +70,30 @@ public class A3GuessNum {
             }
 
             if (attempts == 0) {
-            break;
-            }    
+              if (guess == randomNum) {
+              System.out.println("Correct!\n");
+
+              } else {
+              System.out.println("You lose, loser. \n");
+              System.out.println("The number you couldn't guess was " + randomNum + "\n"); 
+              }
+              System.out.println("Do you wish to play again? yes or no?\n");
+              cond = yesOrNo.nextLine();
+
+              if (!cond.equals("yes")) {
+                break;
+
+              } else if (cond.equals("yes"))
+                randomNum = randomNumGenerator.nextInt(100) + 1;
+                attempts += 5;
+              } 
+
+            /*if (attempts == 0 || guess == randomNum)  {
+              System.out.println("Do you wish to play again? yes or no?");
+              String playAgain = yesOrNo.nextLine(); 
+            } */
 
         } // ENDWHILE
-
-      if (guess == randomNum) {
-        System.out.println("Correct!\n");
-      } else {
-        System.out.println("You lose, loser. \n");
-        System.out.println("The number you couldn't guess was " + randomNum); 
-      }
     
     } // close main
     
